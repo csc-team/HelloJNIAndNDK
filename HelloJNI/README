@@ -1,0 +1,8 @@
+самый простой пример.
+
+в Makefile изменяем во второй строчки пути до "инклудов"
+g++ -shared  -I<ваш путь до jdk>include -I<ваш путь до jdk>include/linux ..
+
+в консоли 
+запускаем make
+запускаем java ShowMassage

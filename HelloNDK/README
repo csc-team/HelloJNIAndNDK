@@ -1,0 +1,24 @@
+
+
+здесь написанна последовательнось действий, чтобы написать HElloWordNDK.( NB проек уже собран) 
+для начала думаю стоит поиграться со сборкой. 
+из директории ../HelloJNIAndNDK/HelloNDK выполните ndk-build clean. потом с 6 пункта. 
+
+
+
+1. 
+в MyActivity определяем несколько native методов.
+2. кликаем Build-> MakeProject (Ctrl F9), чтобы получить MyActivity.class 
+3. в консоли  идем в ../out/production/HelloNDK. там должна быть папка com. 
+	набираем javah javah com.example.MyActivity. появится файл com_example_MyActivity.h
+4. кидаем файл com_example_MyActivity.h в папку jni, и создаем файл com_example_MyActivity.сpp.
+в в нем делаем реализацию метода Java_com_example_MyActivity_getString.
+
+5. создаем файл Android.mk (make File). 
+
+6. набираем ndk-build появятся obj, libs. в libs лежат нужные нам .so
+
+7.в Idea проверяем что в File->Project Structure ->Facets, в поле "native libs directory" пр
+ писан путь до libs (где лежат  so файлы)
+8. запускаем
+
